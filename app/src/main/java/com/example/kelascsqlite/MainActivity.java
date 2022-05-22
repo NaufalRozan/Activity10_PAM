@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), TemanBaru.class);
+                Intent intent = new Intent(getApplicationContext(), TambahTeman.class);
                 startActivity(intent);
             }
         });
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(JSONArray response){
                 Log.d(TAG, response.toString());
                 //Parsing json
-                for (int i=0; i<response.length();i++){
+                for (int i = 0; i < response.length();i++){
                     try {
                         JSONObject obj = response.getJSONObject(i);
                         Teman item = new Teman();
