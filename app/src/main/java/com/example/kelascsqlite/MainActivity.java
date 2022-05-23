@@ -17,7 +17,6 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.kelascsqlite.adapter.TemanAdapter;
-import com.example.kelascsqlite.database.DBController;
 import com.example.kelascsqlite.database.Teman;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -26,19 +25,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private TemanAdapter adapter;
-    private ArrayList<Teman> temanArrayList;
-    DBController controller = new DBController(this);
-
+    private ArrayList<Teman> temanArrayList =  new ArrayList<>();
     private FloatingActionButton fab;
-    String id, nm, tlp;
 
     private static final String TAG = MainActivity.class.getSimpleName();
-    private static String url_select = "http://127.0.0.1/umyTI/bacateman.php";
+    private static String url_select = "https://20200140036.praktikumtiumy.com/bacateman.php";
     public static final String TAG_ID = "id";
     public static final String TAG_NAMA = "nama";
     public static final String TAG_TELPON = "telpon";

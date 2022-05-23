@@ -1,6 +1,5 @@
 package com.example.kelascsqlite.adapter;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -14,7 +13,6 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,7 +24,6 @@ import com.example.kelascsqlite.EditTeman;
 import com.example.kelascsqlite.MainActivity;
 import com.example.kelascsqlite.R;
 import com.example.kelascsqlite.app.AppController;
-import com.example.kelascsqlite.database.DBController;
 import com.example.kelascsqlite.database.Teman;
 
 import org.json.JSONException;
@@ -43,6 +40,7 @@ public class TemanAdapter extends RecyclerView.Adapter<TemanAdapter.TemanViewHol
 
 
     public TemanAdapter(ArrayList<Teman> listData) {
+
         this.listData = listData;
     }
 
@@ -55,7 +53,7 @@ public class TemanAdapter extends RecyclerView.Adapter<TemanAdapter.TemanViewHol
 
     @Override
     public void onBindViewHolder(TemanViewHolder holder, int position) {
-        String nm, tlp,id;
+        String nm, tlp, id;
 
         id = listData.get(position).getId();
         nm = listData.get(position).getNama();
@@ -125,7 +123,7 @@ public class TemanAdapter extends RecyclerView.Adapter<TemanAdapter.TemanViewHol
     }
 
     private void HapusData(final String idx){
-        String url_update = "http://127.0.0.1/umyTI/deletetm.php";
+        String url_update = "https://20200140036.praktikumtiumy.com/deletetm.php";
         final String TAG = MainActivity.class.getSimpleName();
         final String TAG_SUCCES = "success";
         final int[] sukses = new int[1];
